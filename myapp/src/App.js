@@ -5,7 +5,7 @@ import './App.css';
 class App extends Component {
 
   state = {
-    players: {}
+    players: []
   }
 
   componentDidMount() {
@@ -15,17 +15,8 @@ class App extends Component {
     .catch(err => console.log)
   }
 
-  mapPlayers() {
-    let players = this.state.players
-
-    for( let i = 0; i < players.length; i++ ) {
-      return <p>{players[i].firstname}</p>
-    }
-  }
-
   render() {
     console.log(this.state.players)
-    console.log(this.mapPlayers())
     return (
       <div className="App">
         <div className="App-header">
@@ -36,7 +27,13 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div>
-          {this.mapPlayers()}
+          {this.state.players.map(player => (
+            <div className="player">
+              <p>{player.firstname}</p>
+              <p>{player.lastname}</p>
+              <p>{player.number}</p>
+            </div>
+          ))}
         </div>
       </div>
     );
