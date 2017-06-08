@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import img from './tamarcus-brown-158860.jpg'
 import './App.css';
 
 class App extends Component {
@@ -19,16 +19,12 @@ class App extends Component {
     console.log(this.state.players)
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div className="header-img">
+          <img src={img} alt="basketball-img"/>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <div className="playerContain">
           {this.state.players.map(player => (
-            <div className="player">
+            <div className="player" key={player.id}>
               <p>{player.firstname}</p>
               <p>{player.lastname}</p>
               <p>{player.number}</p>
