@@ -26,7 +26,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <div>
+        <div className="playerContain">
           {this.state.players.map(player => (
             <div className="player">
               <p>{player.firstname}</p>
